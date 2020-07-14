@@ -1,6 +1,6 @@
 import chess
-import chess.pgn
-import Pickle as pickle
+from chess import pgn
+import pickle
 import h5py
 import numpy as np
 import random
@@ -75,7 +75,7 @@ def gen_board_pair_data(infile, outfile):
 			if line_num+1 >= size:
 				out.flush()
 				size = 2*size+1
-				print ('Resizing to '+str(size))
+				print('Resizing to '+str(size))
 				[d.resize(size=size, axis=0) for d in
 					[f_boards, s_boards, r_boards, playing, results, move_props]]
 
@@ -137,7 +137,7 @@ def gen_player_data(infile, outfile, player_name):
 			if line_num+1 >= size:
 				out.flush()
 				size = 2*size+1
-				print ('Resizing to '+str(size))
+				print('Resizing to '+str(size))
 				[d.resize(size=size, axis=0) for d in
 					[f_boards, s_boards, p_color]]
 
@@ -162,10 +162,10 @@ def gen_player_data(infile, outfile, player_name):
 	
 
 def main():
-	datafile = '../Data/ficsgamesdb_2015_standard2000_nomovetimes_1429742.pgn'
-	playerfile = '../Data/Tal.pgn'
-	gen_board_pair_data(datafile, '../Data/training_data')
-	gen_player_data(playerfile, '../Data/player_data', 'Tal')
+	datafile = '/Users/nryken/Desktop/ProjectModel/ficsgamesdb_search_143934.pgn'
+	playerfile = '/Users/nryken/Desktop/ProjectModel/ficsgamesdb_thomass_2020_nomovetimes'
+	gen_board_pair_data(datafile, '/Users/nryken/Desktop/ProjectModel/training_data.hdf5')
+	gen_player_data(playerfile, '/Users/nryken/Desktop/ProjectModel/player_data', 'Tal')
 
 if __name__ == '__main__':
 	main()		
