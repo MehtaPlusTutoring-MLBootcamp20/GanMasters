@@ -162,10 +162,10 @@ def gen_player_data(infile, outfile, player_name):
 	
 
 def main():
-	datafile = 'TheHunchosDunchos\ficsgamesdb_202001_standard_nomovetimes_143935.pgn'
-	playerfile = 'TheHunchosDunchos\Adams.pgn'
-	gen_board_pair_data(datafile, 'TheHunchosDunchos\training_data.hdf5')
-	gen_player_data(playerfile, 'TheHunchosDunchos\player_data', 'Adams')
+	datafile = 'ficsgamesdb_202001_standard_nomovetimes_143935.pgn'
+	playerfile = 'Adams.pgn'
+	gen_board_pair_data(datafile, 'training_data.hdf5')
+	gen_player_data(playerfile, 'player_data', 'Adams')
 
 if __name__ == '__main__':
 	main()		
