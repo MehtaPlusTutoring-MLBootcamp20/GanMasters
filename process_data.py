@@ -26,12 +26,16 @@ def convert_board(board):
 
 	# Iterate over board squares 
 	for i in range(64):
-		piece = board.piece_at(i)
+		piece = board.piece_at(i) #None - if there is no piece, Piece if there is one
 		if not piece:
 			continue
 		ind = piece_to_ind[(piece.color, piece.piece_type)]
-		# One-hot encode piece
-		b_tensor[i/8, i%8, ind] = 1
+		#print({piece:ind})#Piece is Number format
+
+		#First thing is what slice we are at (12 slices) - ind
+		#For each of the i's in a board - we want to see if that exists
+
+		b_tensor[int(i/8), i%8, ind] = 1
 
 	return b_tensor
 
@@ -158,7 +162,7 @@ def gen_player_data(infile, outfile, player_name):
 	[d.resize(size=line_num, axis=0) for d in
 		[f_boards, s_boards, p_color]]
 	out.close()
-	pickle.dump(full_boards, open("../Data/full_boards.pkl", "wb"))
+	pickle.dump(full_boards, open("full_boards.pkl", "wb"))
 	
 
 def main():
