@@ -184,8 +184,10 @@ class Magikarp(object):
 		self.gen_board = tf.compat.v1.placeholder(tf.float32, [None, self.n_input])		
 
 		# Get discriminator outputs
-		self.d_pred_real = self.d_predict(tf.concat(1, [self.person_board_1, self.person_board_2]), self.p_keep)
-		self.d_pred_fake = self.d_predict(tf.concat(1, [self.person_board_1, self.gen_board]), self.p_keep)
+		
+
+		self.d_pred_real = self.d_predict(tf.concat([self.person_board_1, self.person_board_2], 1), self.p_keep)
+		self.d_pred_fake = self.d_predict(tf.concat([self.person_board_1, self.gen_board], 1), self.p_keep)
 
 		# Clamp weights
 		self.weight_clamps = [tf.clip_by_value(self.d_weights[layer], -0.01, 0.01) for layer in self.d_weights]

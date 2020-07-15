@@ -4,9 +4,9 @@ import numpy as np
 
 config = {}
 config['batch_size'] = 64
-config['datafile'] = '../Data/training_data.hdf5'
-config['p_datafile'] = '../Data/tal_data.hdf5'
-config['full_boards_file'] = '../Data/full_boards.pkl'
+config['datafile'] = 'training_data.hdf5'
+config['p_datafile'] = 'player_data.hdf5'
+config['full_boards_file'] = 'full_boards.pkl'
 config['num_epochs'] = 10
 config['save_file'] = 'trained_model/trained_genadv.ckpt'
 
