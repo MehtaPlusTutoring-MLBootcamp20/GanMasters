@@ -27,7 +27,7 @@ with tf.compat.v1.Session() as sess:
 		print("Current Board:\n\n", board, "\n")
 		move = "a1a1"
 		while True:
-			raw_move = raw_input("Please enter a move in UCI notation: ")
+			raw_move = input("Please enter a move in UCI notation: ")
 			if len(raw_move) != 4:
 				print("Please use UCI notation.")
 				continue
