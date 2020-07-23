@@ -1,7 +1,7 @@
 # TheHunchosDunchos
 Chess bot
 
-link to website: https://mehtaplustutoring-mlbootcamp20.github.io/TheHunchosDunchos/
+link to website: https://mehtaplustutoring-mlbootcamp20.github.io/GanMasters/
 
-link to overleaf: https://www.overleaf.com/2313117963rkhbtvgmbrss
+link to overleaf: https://www.overleaf.com/read/qbqjyspdnqrg
 
